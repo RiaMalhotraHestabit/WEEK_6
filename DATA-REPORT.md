@@ -42,11 +42,11 @@
 
 - Histogram of MonthlyCharges: 
 
-![MonthlyCharges](screenshots/monthlycharges_hist.png)  
+![MonthlyCharges](screenshots/MonthlyCharges_hist.png)  
 
 - Histogram of TotalCharges: 
 
-![TotalCharges](screenhsots/totalcharges_hist.png)  
+![TotalCharges](screenhsots/TotalCharges_hist.png)  
 
 
 ---
@@ -57,9 +57,16 @@
 - Most common payment method: Electronic check  
 
 **Screenshots:**  
-- Contract distribution: ![Contract](screenshots/contract_count.png)  
-- PaymentMethod distribution: ![PaymentMethod](screenshots/payment_count.png)  
-- InternetService distribution: ![InternetService](screenshots/internet_count.png)  
+- Contract distribution:
+
+ ![Contract](screenshots/contract_count.png)  
+- PaymentMethod distribution: 
+
+![PaymentMethod](screenshots/payment_count.png)  
+
+- InternetService distribution: 
+
+![InternetService](screenshots/internet_count.png)  
 
 ---
 
@@ -67,6 +74,7 @@
 - No missing values remain in the cleaned dataset  
 
 **Screenshot:**  
+
 ![Missing Values Heatmap](screenshots/missing_heatmap.png)  
 
 ---
@@ -77,6 +85,7 @@
 - Target variable Churn weakly correlated with numeric features  
 
 **Screenshot:**  
+
 ![Correlation Heatmap](screenshots/correlation_heatmap.png)  
 
 ---
