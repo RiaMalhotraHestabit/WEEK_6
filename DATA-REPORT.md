@@ -46,7 +46,7 @@
 
 - Histogram of TotalCharges: 
 
-![TotalCharges](screenhsots/TotalCharges_hist.png)  
+![TotalCharges](screenshots/TotalCharges_hist.png)  
 
 
 ---
