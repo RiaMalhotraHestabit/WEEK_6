@@ -6,7 +6,6 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
-
 from feature_selector import select_features
 
 # Paths
@@ -17,24 +16,18 @@ FEATURE_LIST_PATH = os.path.join(BASE_DIR, "features", "feature_list.json")
 
 def load_data():
     df = pd.read_csv(DATA_PATH)
-    
-    # Ensure TotalCharges numeric and fill NaNs with 0
     df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
     df["TotalCharges"] = df["TotalCharges"].fillna(0)
     
     return df
 
 def create_new_features(df):
-    """Generate 12+ new features"""
     # 1. Average charge per month
-    df["AvgChargePerMonth"] = df["TotalCharges"] / (df["tenure"] + 1)
-    
+    df["AvgChargePerMonth"] = df["TotalCharges"] / (df["tenure"] + 1)  
     # 2. Tenure group
     df["TenureGroup"] = pd.cut(df["tenure"], bins=[-1,12,24,48,72], labels=["0-1yr","1-2yr","2-4yr","4-6yr"])
-    
     # 3. Long-term customer
     df["IsLongTerm"] = (df["tenure"] > 24).astype(int)
-    
 
     # 4. High monthly charges
     df["HighMonthlyCharges"] = (df["MonthlyCharges"] > df["MonthlyCharges"].median()).astype(int)
