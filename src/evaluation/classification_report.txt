@@ -1,0 +1,10 @@
+Classification Report - RandomForest
+============================================================
+              precision    recall  f1-score   support
+
+    No Churn     0.8846    0.7923    0.8359      1035
+       Churn     0.5539    0.7139    0.6238       374
+
+    accuracy                         0.7715      1409
+   macro avg     0.7193    0.7531    0.7299      1409
+weighted avg     0.7968    0.7715    0.7796      1409
