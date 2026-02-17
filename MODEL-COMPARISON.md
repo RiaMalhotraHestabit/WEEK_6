@@ -8,59 +8,88 @@
 
 ---
 
-## Model Comparison
+## Models Trained
 
-- RandomForest: Best overall - optimal precision/recall balance
-- LogisticRegression: Highest recall (79%) but lowest precision (51%) - too many false alarms
-- GradientBoosting: Middle performer - no standout strengths
-- SVC: Significantly underperforms - not suitable
+4 classification models with class balancing:
+1. **Logistic Regression** (baseline linear model)
+2. **Random Forest** (ensemble of decision trees)
+3. **Gradient Boosting** (sequential boosting ensemble)
+4. **Support Vector Classifier** (SVC with RBF kernel)
 
-## Executive Summary
-
-**Best Model Selected:** **RandomForest Classifier**  
-**Selection Criteria:** F1 Score (balances precision and recall for imbalanced dataset)  
-**Key Achievement:** 71.4% recall - catching 71% of customers who will churn  
-
-**Business Impact:**
-- Out of 374 actual churners in test set, the model correctly identifies **267 customers** (71.4%)
-- Only **107 churners are missed** (28.6% false negative rate)
-- Retention team can proactively target 482 at-risk customers (267 TP + 215 FP)
+All models use `class_weight='balanced'` to handle class imbalance.
 
 ---
 
-## Model Performance Comparison
-
-### Cross-Validation Results (5-Fold)
+## Cross-Validation Results (5-Fold Stratified)
 
 | Model | CV Accuracy | Std Dev | Ranking |
 |-------|-------------|---------|---------|
-| RandomForest | 77.80% | ±1.09% | 1st |
-| GradientBoosting | 76.36% | ±1.11% | 2nd |
-| LogisticRegression | 74.88% | ±1.51% | 3rd |
-| SVC | 66.06% | ±0.41% | 4th |
-
-**Observations:**
-- Low standard deviation across all models indicates stable performance
-- RandomForest shows best generalization during cross-validation
-- SVC significantly underperforms compared to ensemble methods
+| RandomForest | 78.06% | ±1.11% | 1st |
+| GradientBoosting | 76.38% | ±1.61% | 2nd |
+| LogisticRegression | 74.94% | ±1.07% | 3rd |
+| SVC | 66.08% | ±0.42% | 4th |
 
 ---
 
-### Test Set Performance (All Metrics)
+
+## Test Set Performance
 
 | Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
 |-------|----------|-----------|--------|----------|---------|
-| **RandomForest** | **77.15%** | **55.39%** | **71.39%** | **62.38%** | **83.85%** |
-| LogisticRegression | 73.95% | 50.60% | 79.14% | 61.73% | 84.13% |
-| GradientBoosting | 74.88% | 51.88% | 73.80% | 60.93% | 83.39% |
-| SVC | 66.78% | 41.26% | 59.36% | 48.68% | 73.39% |
+| RandomForest | 76.79% | 54.83% | 71.39% | 62.02% | 84.01% |
+| **GradientBoosting** | **75.80%** | **53.12%** | **75.13%** | **62.24%** | **83.53%** |
+| LogisticRegression | 73.88% | 50.51% | 79.95% | 61.90% | 84.14% |
+| SVC | 66.78% | 41.26% | 59.36% | 48.68% | 73.38% |
 
 ---
 
-## Terminal Output
+## Best Model Selection
 
-![training_output](screenshots/training_output.png)
+**Selected**: **Gradient Boosting Classifier**  
+**Selection Criterion**: F1 Score (best metric for imbalanced classification)  
+**Test F1 Score**: 62.24%
 
-## Confusion Matrix
+---
 
-![confusion_matrix](screenshots/confusion_matrix.png)
+## Confusion Matrix Analysis (GradientBoosting)
+
+![confusion_matrix](src/evaluation/confusion_matrix.png)
+
+
+---
+
+## Model Comparison Insights
+
+### Gradient Boosting **SELECTED**
+- **Best F1 Score (62.24%)**
+- **Highest recall (75.13%)** - catches most churners
+- Balanced precision/recall tradeoff
+- Best for business: prioritizes not missing churners
+
+### Random Forest
+- Highest CV accuracy (78.06%)
+- Best precision (54.83%)
+- Highest ROC-AUC (84.01%)
+- Lower recall (71.39%) - misses ~14 more churners than GB
+
+### Logistic Regression
+- **Highest recall (79.95%)** - catches most churners
+- **Lowest precision (50.51%)** - too many false alarms
+- F1 only 61.90% due to poor precision/recall balance
+
+### SVC
+- Significantly underperforms (F1: 48.68%)
+- Not suitable for this problem
+- Likely issue: RBF kernel doesn't fit feature space
+
+---
+
+## Key Takeaways
+
+1. **GradientBoosting selected** for optimal F1 score (62.24%)
+2. **High recall prioritized** (75.13%) to minimize costly missed churners
+3. **Close competition**: RandomForest (62.02%) vs GradientBoosting (62.24%)
+4. **Class imbalance handled** via balanced weights + stratified CV
+5. **Strong discrimination**: ROC-AUC ~84% across top 3 models
+
+---

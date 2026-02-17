@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-02-17T07:51:30.233166+00:00",
+  "reference_samples": 5634,
+  "current_samples": 10,
+  "drift_threshold": 0.05,
+  "total_features_checked": 4,
+  "features_with_drift": 1,
+  "drifted_features": [
+    "tenure"
+  ],
+  "overall_drift_detected": true,
+  "prediction_drift": {
+    "overall_churn_rate": 0.7,
+    "older_predictions_churn_rate": 0.625,
+    "recent_predictions_churn_rate": 1.0,
+    "churn_rate_shift": 0.375,
+    "drift_detected": 

@@ -1,12 +1,5 @@
-"""
-Configuration for ML Pipeline
-"""
-
 from pathlib import Path
 
-# ============================================
-# PATHS - Direct hardcoded, no ROOT variable
-# ============================================
 class Paths:
     # Data
     X_TRAIN = Path('src/data/processed/X_train.csv')
@@ -25,9 +18,7 @@ class Paths:
     FEATURE_IMPORTANCE = Path('src/evaluation/feature_importance.png')
     ERROR_ANALYSIS = Path('src/evaluation/error_analysis.png')
 
-# ============================================
 # SETTINGS
-# ============================================
 RANDOM_STATE = 42
 N_TRIALS = 100
 CV_FOLDS = 5

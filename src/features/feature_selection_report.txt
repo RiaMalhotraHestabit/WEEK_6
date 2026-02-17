@@ -1,0 +1,89 @@
+======================================================================
+FEATURE SELECTION REPORT
+======================================================================
+
+1. Correlation Filtering
+   - Dropped 16 highly correlated features
+   - Dropped features: AvgChargePerMonth, gender_Male, Partner_Yes, Dependents_Yes, PhoneService_Yes, MultipleLines_No phone service, OnlineSecurity_No internet service, OnlineSecurity_Yes, OnlineBackup_No internet service, DeviceProtection_No internet service, TechSupport_No internet service, TechSupport_Yes, StreamingTV_No internet service, StreamingMovies_No internet service, Contract_Month-to-month, PaperlessBilling_Yes
+
+2. Mutual Information Selection
+   - Selected top 30 features
+   - Selected features:
+     • IsMonthToMonth: 0.1076
+     • tenure: 0.0717
+     • TechSupport_No: 0.0664
+     • Contract_Two year: 0.0604
+     • InternetService_Fiber optic: 0.0600
+     • OnlineSecurity_No: 0.0581
+     • IsLongTerm: 0.0567
+     • MonthlyCharges: 0.0483
+     • TenureGroup_0-1yr: 0.0435
+     • OnlineBackup_No: 0.0420
+     • TotalCharges: 0.0398
+     • PaymentMethod_Electronic check: 0.0327
+     • InternetService_No: 0.0321
+     • TenureGroup_4-6yr: 0.0298
+     • DeviceProtection_No: 0.0294
+     • SeniorCitizen: 0.0213
+     • Contract_One year: 0.0200
+     • Dependents_No: 0.0192
+     • HighMonthlyCharges: 0.0177
+     • Partner_No: 0.0165
+     • InternetService_DSL: 0.0155
+     • StreamingTV_No: 0.0147
+     • PaymentMethod_Credit card (automatic): 0.0142
+     • HasOnlineSecurity: 0.0138
+     • PartnerAndDependents: 0.0135
+     • TotalServices: 0.0132
+     • PaperlessBilling_No: 0.0123
+     • StreamingMovies_No: 0.0108
+     • HasTechSupport: 0.0096
+     • OnlineBackup_Yes: 0.0057
+
+3. All Features Ranked by MI Score
+----------------------------------------------------------------------
+Rank   Feature                                  MI_Score  
+----------------------------------------------------------------------
+1      IsMonthToMonth                           0.1076    
+2      tenure                                   0.0717    
+3      TechSupport_No                           0.0664    
+4      Contract_Two year                        0.0604    
+5      InternetService_Fiber optic              0.0600    
+6      OnlineSecurity_No                        0.0581    
+7      IsLongTerm                               0.0567    
+8      MonthlyCharges                           0.0483    
+9      TenureGroup_0-1yr                        0.0435    
+10     OnlineBackup_No                          0.0420    
+11     TotalCharges                             0.0398    
+12     PaymentMethod_Electronic check           0.0327    
+13     InternetService_No                       0.0321    
+14     TenureGroup_4-6yr                        0.0298    
+15     DeviceProtection_No                      0.0294    
+16     SeniorCitizen                            0.0213    
+17     Contract_One year                        0.0200    
+18     Dependents_No                            0.0192    
+19     HighMonthlyCharges                       0.0177    
+20     Partner_No                               0.0165    
+21     InternetService_DSL                      0.0155    
+22     StreamingTV_No                           0.0147    
+23     PaymentMethod_Credit card (automatic)    0.0142    
+24     HasOnlineSecurity                        0.0138    
+25     PartnerAndDependents                     0.0135    
+26     TotalServices                            0.0132    
+27     PaperlessBilling_No                      0.0123    
+28     StreamingMovies_No                       0.0108    
+29     HasTechSupport                           0.0096    
+30     OnlineBackup_Yes                         0.0057    
+31     StreamingTV_Yes                          0.0039    
+32     MultipleLines_No                         0.0030    
+33     HasStreaming                             0.0027    
+34     PhoneService_No                          0.0010    
+35     TenureGroup_1-2yr                        0.0008    
+36     PaymentMethod_Bank transfer (automatic)  0.0005    
+37     SeniorWithPartner                        0.0000    
+38     gender_Female                            0.0000    
+39     MultipleLines_Yes                        0.0000    
+40     DeviceProtection_Yes                     0.0000    
+41     StreamingMovies_Yes                      0.0000    
+42     PaymentMethod_Mailed check               0.0000    
+43     TenureGroup_2-4yr                        0.0000    

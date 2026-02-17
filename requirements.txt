@@ -109,3 +109,9 @@ webcolors==25.10.0
 webencodings==0.5.1
 websocket-client==1.9.0
 widgetsnbextension==4.0.15
+
+# Day 5 - API Deployment
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==1.10.13
+python-dotenv==1.0.0

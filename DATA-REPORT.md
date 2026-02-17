@@ -46,7 +46,7 @@
 
 - Histogram of TotalCharges: 
 
-![TotalCharges](screenshots/TotalCharges_hist.png)  
+![TotalCharges](screenhsots/TotalCharges_hist.png)  
 
 
 ---
@@ -83,7 +83,7 @@
 - Positive correlation observed between tenure and TotalCharges  
 - MonthlyCharges weakly correlated with TotalCharges  
 - Target variable Churn weakly correlated with numeric features  
-v
+
 **Screenshot:**  
 
 ![Correlation Heatmap](screenshots/correlation_heatmap.png)  
